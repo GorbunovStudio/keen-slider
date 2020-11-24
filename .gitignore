@@ -3,7 +3,7 @@ node_modules
 .gh-pages
 dist
 
-/*.js
-/*.css
-/*.scss
-/*.map
+# /*.js
+# /*.css
+# /*.scss
+# /*.map
