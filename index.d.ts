@@ -32,10 +32,7 @@ export type TDetails = {
 
 export type TSlidesPerViewGetter = () => number
 
-export type TOptions = {
-  breakpoints?: {
-    [key: string]: Omit<TOptionsEvents, 'breakpoints'>
-  }
+type TBaseOptions = {
   centered?: boolean
   controls?: boolean
   dragSpeed?: number | ((val: number, instance: KeenSlider) => number)
@@ -53,6 +50,12 @@ export type TOptions = {
   spacing?: number
   vertical?: boolean
   inlineBlockMode?: boolean
+}
+
+export type TOptions = TBaseOptions & {
+  breakpoints?: {
+    [key: string]: TBaseOptions & TEvents
+  }
 }
 
 export type TEvents = {
